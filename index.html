@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Learn</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Top bar -->
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Open lessons">☰</button>
+      <a href="#" class="logo" id="logo">CSS<span>Learn</span></a>
+      <div class="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <span id="progressText">0 / 0</span>
+      </div>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
+    </header>
+
+    <div class="layout">
+      <!-- Sidebar with lesson list -->
+      <aside class="sidebar" id="sidebar">
+        <nav id="lessonList"></nav>
+      </aside>
+
+      <!-- Main lesson area -->
+      <main class="content">
+        <section class="hero" id="hero">
+          <h1>Learn CSS by <em>doing</em></h1>
+          <p>
+            From your first selector to Flexbox, responsive design and Bootstrap.
+            Every lesson has explanations, comparison tables, a live playground and a quick quiz.
+          </p>
+          <button class="btn primary" id="startBtn">Start learning →</button>
+        </section>
+
+        <article class="lesson" id="lesson" hidden>
+          <p class="lesson-num" id="lessonNum"></p>
+          <h1 id="lessonTitle"></h1>
+          <div class="lesson-body" id="lessonBody"></div>
+
+          <h2>Try it yourself</h2>
+          <div class="playground" id="playground">
+            <div class="editor">
+              <div class="pane-head">
+                <div class="tabs">
+                  <button class="tab active" data-tab="css">CSS</button>
+                  <button class="tab" data-tab="html">HTML</button>
+                </div>
+                <div class="pane-actions">
+                  <button class="btn small" id="wideBtn" title="Toggle wide preview">⤢ Wide preview</button>
+                  <button class="btn small" id="resetBtn">Reset</button>
+                </div>
+              </div>
+              <textarea id="cssEditor" spellcheck="false" aria-label="CSS code"></textarea>
+              <textarea id="htmlEditor" spellcheck="false" aria-label="HTML code" hidden></textarea>
+            </div>
+            <div class="preview">
+              <div class="pane-head"><span>Result</span></div>
+              <iframe id="previewFrame" title="Live preview"></iframe>
+            </div>
+          </div>
+
+          <div class="quiz" id="quiz"></div>
+
+          <nav class="lesson-nav">
+            <button class="btn" id="prevBtn">← Previous</button>
+            <button class="btn primary" id="doneBtn">Mark complete</button>
+            <button class="btn" id="nextBtn">Next →</button>
+          </nav>
+        </article>
+      </main>
+    </div>
+
+    <script src="lessons.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
